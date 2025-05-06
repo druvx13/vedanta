@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tattva Bodha - Awakening to Reality</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome for decorative icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Serif', serif;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgyMCwgMjAsIDIwLCAwLjg1KSIvPjxwYXRoIGQ9Ik0gMCwwIEwgMCwxMDAgTTEwMCwwIEwxMDAsMTAwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSIvPjwvc3ZnPg==') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.8;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #ff6b6b;
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    h2::before {
+      content: "✿";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #e67e22;
+      font-size: 1.4em;
+      line-height: 1.2;
+    }
+    
+    blockquote {
+      border-left: 4px solid #ffcc66;
+      padding-left: 15px;
+      margin: 20px 0;
+      color: #bbb;
+      font-style: italic;
+    }
+    
+    /* Corner decoration SVG as data URI */
+    .corner-decoration {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNlNjc5MjIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTI4IDEyOGwxMjggMTI4bC0xMjggMTI4bTEyOCAxMjhsMTI4LTEyOGwtMTI4LTEyOG0xMjgtMTI4bDEyOCAxMjhsLTEyOCAxMjgiLz48L3N2Zz4=');
+      background-size: contain;
+      z-index: 0;
+    }
+    
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+    
+    .top-right {
+      top: 10px;
+      right: 10px;
+      transform: rotate(90deg);
+    }
+    
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+      transform: rotate(-90deg);
+    }
+    
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(180deg);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255,204,102,0.5);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,204,102,0.8);
+    }
+  </style>
+</head>
+<body data-aos-easing="ease-in-out" data-aos-duration="800" data-aos-delay="0">
+  
+  <div class="container max-w-4xl mx-auto bg-gray-900 bg-opacity-85 rounded-xl p-8 shadow-xl shadow-white/5 relative">
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+    
+    <header class="text-center mb-10">
+      <h1 class="animate__animated animate__bounceInDown text-4xl md:text-5xl font-bold tracking-wider text-amber-300 uppercase font-oswald mb-2 text-shadow-lg">Tattva Bodha</h1>
+      <p class="italic text-gray-300">The Awakening to Reality by Adi Sankaracharya</p>
+    </header>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">I. The Four Perfections</h2>
+      <p class="text-gray-200 mb-4">To the Master, the World-Soul, the Master of seekers for union, obeisance; to the teacher, the giver of wisdom.</p>
+      
+      <blockquote class="border-l-4 border-amber-300 pl-4 my-6 text-gray-300 italic">
+        We shall tell of the way of discerning reality, the perfection of freedom, for those who are fitted by possessing the Four Perfections.
+      </blockquote>
+      
+      <ul class="list-disc pl-6 space-y-3 text-gray-200">
+        <li><strong class="text-amber-200">Viveka:</strong> Discernment between lasting and unlasting things.</li>
+        <li><strong class="text-amber-200">Vyragya:</strong> No rage for enjoying the fruit of works, either here or there.</li>
+        <li><strong class="text-amber-200">Sad Sampatti:</strong> Six graces that follow peace — Peace, Self-Control, Steadiness, Sturdiness, Confidence, Intentness.</li>
+        <li><strong class="text-amber-200">Mumukshutva:</strong> Longing to be free.</li>
+      </ul>
+      
+      <p class="text-gray-200 mt-6">Through these four perfections, men are fitted to discern reality.</p>
+    </section>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">II. What is the Self?</h2>
+      <p class="text-gray-200 mb-4">The Self stands apart from the Physical, the Emotional, and the Causal Vestures; beyond the five Veils; witness of the three Modes. His own nature is Being, Consciousness, Bliss — this is the Self.</p>
+      
+      <ul class="list-disc pl-6 space-y-3 text-gray-200">
+        <li><strong class="text-amber-200">Being:</strong> That which stands through the Three Times — Past, Present, Future.</li>
+        <li><strong class="text-amber-200">Consciousness:</strong> The own-nature of perceiving.</li>
+        <li><strong class="text-amber-200">Bliss:</strong> The own-nature of joy.</li>
+      </ul>
+      
+      <blockquote class="border-l-4 border-amber-300 pl-4 my-6 text-gray-300 italic">
+        Thus let a man know that the own-nature of his own Self is Being, Consciousness, Bliss.
+      </blockquote>
+    </section>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">III. The Three Vestures</h2>
+      <ol class="list-decimal pl-6 space-y-3 text-gray-200">
+        <li><strong class="text-amber-200">Physical Vesture (sthula sarira):</strong> Formed of the fivefold elements, born through works, it is the house where pleasure and pain are enjoyed.</li>
+        <li><strong class="text-amber-200">Emotional Vesture (sookshma sarira):</strong> Formed of the non-fivefold elements, it consists of seventeen phases — the five powers of knowing, five of doing, five lives, emotion, and soul.</li>
+        <li><strong class="text-amber-200">Causal Vesture (karana sarira):</strong> Born of beginningless unwisdom, it is the cause of the other two vestures.</li>
+      </ol>
+    </section>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">IV. The Three Modes</h2>
+      <ul class="list-disc pl-6 space-y-3 text-gray-200">
+        <li><strong class="text-amber-200">Waking (Jagrat):</strong> Knowledge comes through Hearing and other knowing powers.</li>
+        <li><strong class="text-amber-200">Dreaming (Swapna):</strong> The world appears in rest, generated by impressions of waking life.</li>
+        <li><strong class="text-amber-200">Dreamlessness (Sushupti):</strong> A state where one perceives nothing outwardly and enjoys bliss inwardly.</li>
+      </ul>
+    </section>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">V. The Five Veils</h2>
+      <ul class="list-disc pl-6 space-y-3 text-gray-200">
+        <li><strong class="text-amber-200">Food-formed (annamaya kosa)</strong></li>
+        <li><strong class="text-amber-200">Life-formed (pranamaya kosa)</strong></li>
+        <li><strong class="text-amber-200">Emotion-formed (manomaya kosa)</strong></li>
+        <li><strong class="text-amber-200">Knowledge-formed (vijnanamaya kosa)</strong></li>
+        <li><strong class="text-amber-200">Bliss-formed (anandamaya kosa)</strong></li>
+      </ul>
+    </section>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">VI. Maya, Life, and the Lord</h2>
+      <p class="text-gray-200 mb-4">There is an image of the Eternal, called the Life, who attributes himself to the vestures. Through the power of Nature, he sees the Lord as separate.</p>
+      
+      <p class="text-gray-200 mb-4">When wearing the disguise of Unwisdom, the Self is called the Life. When wearing the disguise of Glamor, the Self is called the Lord.</p>
+      
+      <blockquote class="border-l-4 border-amber-300 pl-4 my-6 text-gray-300 italic">
+        But the difference between Life and Lord is only apparent. In truth, both are pure Consciousness.
+      </blockquote>
+    </section>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">VII. The Free-in-Life (Jivanmukta)</h2>
+      <p class="text-gray-200 mb-4">He who realizes "I am stainless Being, Consciousness, Bliss," and knows this by direct perception, is Free-in-life.</p>
+      
+      <p class="text-gray-200 mb-6">Once the knowledge "I am the Eternal" arises, all bonds of deeds dissolve.</p>
+      
+      <h3 class="text-xl font-semibold mb-3 text-amber-200">Three Kinds of Deeds:</h3>
+      <ul class="list-disc pl-6 space-y-3 text-gray-200">
+        <li><strong class="text-amber-200">Deeds to come:</strong> Pure and impure actions done after wisdom is gained.</li>
+        <li><strong class="text-amber-200">Deeds accumulated:</strong> Actions waiting to manifest from past births.</li>
+        <li><strong class="text-amber-200">Deeds entered on:</strong> Actions experienced now and ended through experience.</li>
+      </ul>
+    </section>
+    
+    <footer class="text-center text-sm text-gray-400 mt-16 pt-6 border-t border-gray-700" data-aos="fade-up">
+      <p class="mb-2"><i class="fas fa-book-open mr-2 text-amber-300"></i> Thus the Awakening to Reality is completed.</p>
+      <p>Translated by Charles Johnston</p>
+    </footer>
+  </div>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  </script>
+</body>
+</html>
