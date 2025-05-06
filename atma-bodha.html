@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atma Bodha - Knowledge of the Self</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome for decorative icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Serif', serif;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgyMCwgMjAsIDIwLCAwLjg1KSIvPjxwYXRoIGQ9Ik0gMCwwIEwgMCwxMDAgTTEwMCwwIEwxMDAsMTAwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSIvPjwvc3ZnPg==') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.8;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #ff6b6b;
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    h2::before {
+      content: "✿";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #e67e22;
+      font-size: 1.4em;
+      line-height: 1.2;
+    }
+    
+    blockquote {
+      border-left: 4px solid #ffcc66;
+      padding-left: 15px;
+      margin: 20px 0;
+      color: #bbb;
+      font-style: italic;
+    }
+    
+    /* Corner decoration SVG as data URI */
+    .corner-decoration {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNlNjc5MjIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTI4IDEyOGwxMjggMTI4bC0xMjggMTI4bTEyOCAxMjhsMTI4LTEyOGwtMTI4LTEyOG0xMjgtMTI4bDEyOCAxMjhsLTEyOCAxMjgiLz48L3N2Zz4=');
+      background-size: contain;
+      z-index: 0;
+    }
+    
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+    
+    .top-right {
+      top: 10px;
+      right: 10px;
+      transform: rotate(90deg);
+    }
+    
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+      transform: rotate(-90deg);
+    }
+    
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(180deg);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255,204,102,0.5);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,204,102,0.8);
+    }
+    
+    .verse-container {
+      background: rgba(30, 30, 30, 0.7);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .verse-container:hover {
+      background: rgba(40, 40, 40, 0.8);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .verse-number {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #e67e22;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .explanation {
+      background: rgba(20, 20, 20, 0.5);
+      border-left: 3px solid #ffcc66;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 0 5px 5px 0;
+    }
+  </style>
+</head>
+<body data-aos-easing="ease-in-out" data-aos-duration="800" data-aos-delay="0">
+  
+  <div class="container max-w-4xl mx-auto bg-gray-900 bg-opacity-85 rounded-xl p-8 shadow-xl shadow-white/5 relative">
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+    
+    <header class="text-center mb-10">
+      <h1 class="animate__animated animate__bounceInDown text-4xl md:text-5xl font-bold tracking-wider text-amber-300 uppercase font-oswald mb-2 text-shadow-lg">Atma Bodha</h1>
+      <p class="italic text-gray-300">Knowledge of the Self by Adi Sankaracharya</p>
+      <p class="text-sm text-gray-400 mt-2">Translated by Swami Chinmayananda</p>
+    </header>
+    
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Introduction</h2>
+      <p class="text-gray-200 mb-4">Atma Bodha is a profound text that systematically unfolds the nature of the Self (Atman) and its identity with Brahman. Composed by Adi Shankaracharya, it serves as a guide for seekers of truth who wish to realize their true nature.</p>
+    </section>
+    
+    <!-- Verse 1 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">1</span>
+        <p class="text-gray-200 flex-1">I am composing the ATMA-BODHA, this treatise of the Knowledge of the Self, for those who have purified themselves by austerities and are peaceful in heart and calm, who are free from cravings and are desirous of liberation.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Shankara declares his intention to compose this text for qualified seekers - those who have purified themselves through spiritual practices, who are serene, free from worldly desires, and earnestly seeking liberation (moksha).</p>
+      </div>
+    </div>
+    
+    <!-- Verse 2 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">2</span>
+        <p class="text-gray-200 flex-1">Just as the fire is the direct cause for cooking, so without Knowledge no emancipation can be had. Compared with all other forms of discipline Knowledge of the Self is the one direct means for liberation.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Just as fire alone can cook food, only Self-knowledge (not rituals or worship alone) can bring liberation. While other spiritual practices are helpful, direct knowledge of one's true nature is the most immediate path to freedom.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 3 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">3</span>
+        <p class="text-gray-200 flex-1">Action cannot destroy ignorance, for it is not in conflict with or opposed to ignorance. Knowledge does verily destroy ignorance as light destroys deep darkness.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Actions (karma) and ignorance exist in different domains - like darkness and a physical object that don't interact. Only knowledge (like light) can remove ignorance (darkness). Karma may give temporary results but cannot remove the root ignorance of our true nature.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 4 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">4</span>
+        <p class="text-gray-200 flex-1">The Soul appears to be finite because of ignorance. When ignorance is destroyed the Self which does not admit of any multiplicity truly reveals itself by itself: like the Sun when the clouds pass away.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self (Atman) only appears limited due to ignorance. When ignorance is removed through knowledge, the infinite, non-dual nature of the Self becomes self-evident, just as the sun is revealed when clouds disperse.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 5 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">5</span>
+        <p class="text-gray-200 flex-1">Constant practice of knowledge purifies the Self ('Jivatman'), stained by ignorance and then disappears itself - as the powder of the'Kataka-nut' settles down after it has cleansed the muddy water.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Just as kataka nut powder (used to purify water) settles after cleansing, the knowledge that removes ignorance also disappears after its purpose is served, leaving only the pure Self.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 6 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">6</span>
+        <p class="text-gray-200 flex-1">The world which is full of attachments, aversions, etc., is like a dream. It appears to be real, as long as it continues but appears to be unreal when one is awake (i.e., when true wisdom dawns).</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The world of duality (with likes/dislikes) seems real while we're in it, just as a dream seems real while dreaming. Upon awakening to wisdom, its illusory nature becomes clear.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 7 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">7</span>
+        <p class="text-gray-200 flex-1">The Jagat appears to be true (Satyam) so long as Brahman, the substratum, the basis of all this creation, is not realised. It is like the illusion of silver in the mother-of pearl.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The world appears real until we realize Brahman as its substratum, just as mother-of-pearl can be mistaken for silver in dim light. The illusion vanishes with proper knowledge.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 8 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">8</span>
+        <p class="text-gray-200 flex-1">Like bubbles in the water, the worlds rise, exist and dissolve in the Supreme Self, which is the material cause and the prop of everything.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> All worlds emerge from, exist in, and dissolve back into the Supreme Self (like bubbles in water). The Self is both the material and sustaining cause of all creation.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 9 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">9</span>
+        <p class="text-gray-200 flex-1">All the manifested world of things and beings are projected by imagination upon the substratum which is the Eternal All-pervading Vishnu, whose nature is Existence-Intelligence; just as the different ornaments are all made out of the same gold.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The diverse world is imagined upon the one Reality (Vishnu/Brahman), just as various ornaments are forms of the same gold. The substratum remains unchanged while names/forms appear.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 10 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">10</span>
+        <p class="text-gray-200 flex-1">The All-pervading Akasa appears to be diverse on account of its association with various conditionings (Upadhis) which are different from each other. Space becomes one on the destruction of these limiting adjuncts: So also the Omnipresent Truth appears to be diverse on account of Its association with the various Upadhis and becomes one on the destruction of these Upadhis.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Like space appears divided by pots but is actually one, Brahman appears diverse due to limiting adjuncts (upadhis) like body/mind. When these are transcended, non-duality is realized.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 11 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">11</span>
+        <p class="text-gray-200 flex-1">Because of Its association with different conditionings (Upadhis) such ideas as caste, colour and position are super-imposed upon the Atman, as flavour, colour, etc., are super-imposed on water.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Attributes like caste or status are falsely attributed to the Atman due to its association with upadhis (limiting adjuncts), just as color/flavor seem to belong to water when actually from external sources.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 12 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">12</span>
+        <p class="text-gray-200 flex-1">Determined for each individual by his own past actions and made up of the Five elements - that have gone through the process of "five-fold self-division and mutual combination" (Pancheekarana) - are born the gross-body, the medium through which pleasure and pain are experienced, the tent-of-experiences.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The gross physical body is formed by pancheekarana (five-fold combination of elements), shaped by past karma, and serves as the instrument for experiencing pleasure/pain in the world.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 13 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">13</span>
+        <p class="text-gray-200 flex-1">The five Pranas, the ten organs and the Manas and the Buddhi, formed from the rudimentary elements (Tanmatras) before their "five-fold division and mutual combination with one another" (Pancheekarana) and this is the subtle body, the instruments-of-experience (of the individual).</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The subtle body consists of: 5 pranas, 5 sense organs, 5 action organs, mind (manas), and intellect (buddhi) - all formed from tanmatras (subtle elements) before their gross combination. This is the experiencing mechanism.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 14 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">14</span>
+        <p class="text-gray-200 flex-1">Avidya which is indescribable and beginningless is the Causal Body. Know for certain that the Atman is other than these three conditioning bodies (Upadhis).</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The causal body is beginningless ignorance (avidya) itself. The true Self is distinct from all three bodies (gross, subtle, causal) which are merely conditioning factors (upadhis).</p>
+      </div>
+    </div>
+    
+    <!-- Verse 15 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">15</span>
+        <p class="text-gray-200 flex-1">In its identification with the five-sheaths the Immaculate Atman appears to have borrowed their qualities upon Itself; as in the case of a crystal which appears to gather unto itself colour of its vicinity (blue cloth, etc.,).</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The pure Atman seems to take on qualities of the five sheaths (physical, vital, mental, intellectual, bliss) it's associated with, just as a clear crystal appears colored when placed on colored cloth.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 16 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">16</span>
+        <p class="text-gray-200 flex-1">Through discriminative self-analysis and logical thinking one should separate the Pure self within from the sheaths as one separates the rice from the husk, bran, etc., that are covering it.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Through viveka (discrimination), one must discern the pure Self from its coverings (sheaths), like separating rice from husk. This analytical negation (neti-neti) reveals the true Self.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 17 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">17</span>
+        <p class="text-gray-200 flex-1">The Atman does not shine in everything although He is All-pervading. He is manifest only in the inner equipment, the intellect (Buddhi): just as the reflection in a clean mirror.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Though omnipresent, the Atman is clearly reflected only in a purified intellect (buddhi), like a face is clearly reflected only in a clean mirror, not on rough surfaces.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 18 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">18</span>
+        <p class="text-gray-200 flex-1">One should understand that the Atman is always like the King, distinct from the body, senses, mind and intellect, all of which constitute the matter (Prakriti); and is the witness of their functions.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Atman is the eternal witness, distinct from prakriti (matter) which includes body, senses, mind and intellect. Like a king remains distinct from his kingdom while overseeing it.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 19 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">19</span>
+        <p class="text-gray-200 flex-1">The moon appears to be running when the clouds move in the sky. Likewise to the non-discriminating person the Atman appears to be active when It is observed through the functions of the sense-organs.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Just as clouds' movement makes the moon seem mobile, the Atman appears active due to the activities of sense organs. Actually, the Self is ever actionless and changeless.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 20 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">20</span>
+        <p class="text-gray-200 flex-1">Depending upon the energy of vitality of Consciousness (Atma Chaitanya) the body, senses, mind and intellect engage themselves in their respective activities, just as men work depending upon the light of the Sun.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> All instruments (body, senses, etc.) function due to the light of Consciousness (Atman), just as people work by sunlight. The Self illumines all activities while remaining unaffected.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 21 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">21</span>
+        <p class="text-gray-200 flex-1">Fools, because they lack in their powers of discrimination superimpose on the Atman, the Absolute-Existence-Knowledge (Sat-Chit), all the varied functions of the body and the senses, just as they attribute blue colour and the like to the sky.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Due to lack of discrimination, the ignorant attribute bodily/sensory functions to the Atman (which is pure Existence-Consciousness), like projecting blue color onto the colorless sky.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 22 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">22</span>
+        <p class="text-gray-200 flex-1">The tremblings that belong to the waters are attributed through ignorance to the reflected moon dancing on it: likewise agency of action, of enjoyment and of other limitations (which really belong to the mind) are delusively understood as the nature of the Self (Atman).</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Just as water's movement makes the moon's reflection seem shaky, the mind's activities are mistakenly attributed to the Self. The Atman is actually free from all actions and limitations.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 23 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">23</span>
+        <p class="text-gray-200 flex-1">Attachment, desire, pleasure, pain, etc., are perceived to exist so long as Buddhi or mind functions. They are not perceived in deep sleep when the mind ceases to exist. Therefore they belong to the mind alone and not to the Atman.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> All experiences (pleasure/pain etc.) occur only when the mind is active and disappear in deep sleep. Hence they belong to the mind, not the ever-present Atman which witnesses their presence and absence.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 24 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">24</span>
+        <p class="text-gray-200 flex-1">Just as luminosity is the nature of the Sun, coolness of water and heat of fire, so too the nature of the Atman is Eternity, Purity, Reality, Consciousness and Bliss.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The essential nature of Atman is: Eternal (beyond time), Pure (untouched by impurities), Real (not an effect), Consciousness (self-luminous), and Bliss (ananda). These are its intrinsic qualities.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 25 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">25</span>
+        <p class="text-gray-200 flex-1">By the indiscriminate blending of the two - the Existence-Knowledge-aspect of the Self and the thought-wave of the intellect - there arises the notion of "I know".</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The false ego ("I know") arises from mixing the pure Consciousness (Self) with the intellect's thought modifications. Like mixing pure water with color creates colored water.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 26 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">26</span>
+        <p class="text-gray-200 flex-1">Atman never does anything and the intellect of its own accord has no capacity to experience'I know'. But the individuality in us delusorily thinks he is himself the seer and the knower.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Atman is actionless; the intellect is inert. Yet their seeming interaction creates the false notion of individual knowership/agency (jiva). This is the root of bondage.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 27 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">27</span>
+        <p class="text-gray-200 flex-1">Just as the person who regards a rope as a snake is overcome by fear, so also one considering oneself as the ego (Jiva) is overcome by fear. The ego-centric individuality in us regains fearlessness by realising that It is not a Jiva but is Itself the Supreme Soul.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Fear arises from mistaken identity (like snake/rope). Realizing "I am Brahman" (not the limited jiva) removes all fear, just as proper knowledge removes fear of the imagined snake.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 28 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">28</span>
+        <p class="text-gray-200 flex-1">Just as a lamp illumines a jar or a pot, so also the Atman illumines the mind and the sense organs, etc. These material-objects by themselves cannot illumine themselves because they are inert.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self illumines all instruments (mind, senses etc.) which are inert matter (like a lamp illumines objects). Without Consciousness, no knowledge or experience is possible.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 29 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">29</span>
+        <p class="text-gray-200 flex-1">A lighted-lamp does not need another lamp to illumine its light. So too, Atman which is Knowledge itself needs no other knowledge to know it.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self is self-luminous - it doesn't require another light to reveal it (unlike objects). It is knowledge itself, needing no proof or validation.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 30 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">30</span>
+        <p class="text-gray-200 flex-1">By a process of negation of the conditionings (Upadhis) through the help of the scriptural statement'It is not this, It is not this', the oneness of the individual soul and the Supreme Soul, as indicated by the great Mahavakyas, has to be realised.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Through neti-neti (not this, not this) negation of all limiting adjuncts, one realizes the identity of individual soul (jiva) and Supreme Soul (Brahman) as declared in the great Upanishadic statements (mahavakyas).</p>
+      </div>
+    </div>
+    
+    <!-- Verse 31 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">31</span>
+        <p class="text-gray-200 flex-1">The body, etc., up to the "Causal Body" - Ignorance - which are objects perceived, are as perishable as bubbles. Realise through discrimination that I am the'Pure Brahman' ever completely separate from all these.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> All bodies (gross, subtle, causal) are transient like bubbles. Through viveka (discrimination), one realizes "I am the eternal Brahman" - distinct from all perishable adjuncts.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 32 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">32</span>
+        <p class="text-gray-200 flex-1">I am other than the body and so I am free from changes such as birth, wrinkling, senility, death, etc. I have nothing to do with the sense objects such as sound and taste, for I am without the sense-organs.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Since the Self is distinct from the body, it's free from bodily changes (birth, death etc.). Being beyond senses, it's unaffected by sense objects. This is the realization of a knower.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 33 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">33</span>
+        <p class="text-gray-200 flex-1">I am other than the mind and hence, I am free from sorrow, attachment, malice and fear, for "HE is without breath and without mind, Pure, etc.", is the Commandment of the great scripture, the Upanishads.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self is beyond the mind - hence free from all mental modifications (sorrow, fear etc.). As the Upanishads declare, it's without breath or mind - pure consciousness alone.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 34 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">34</span>
+        <p class="text-gray-200 flex-1">I am without attributes and actions; Eternal (Nitya) without any desire and thought (Nirvikalpa), without any dirt (Niranjana), without any change (Nirvikara), without form (Nirakara), ever-liberated (Nitya Mukta) ever-pure (Nirmala).</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self's true nature is: beyond attributes/actions, eternal, desireless, thought-free, stainless, changeless, formless, ever-free and pure. These negations point to its transcendent reality.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 35 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">35</span>
+        <p class="text-gray-200 flex-1">Like the space I fill all things within and without. Changeless and the same in all, at all times I am pure, unattached, stainless and motionless.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Like space permeates everything yet remains unaffected, the Self pervades all yet is changeless, pure and unattached. It's the silent witness within all forms.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 36 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">36</span>
+        <p class="text-gray-200 flex-1">I am verily that Supreme Brahman alone which is Eternal, Pure and Free, One, indivisible and non-dual and of the nature of Changeless-Knowledge-Infinite.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The final realization: "I am Brahman" - eternal, pure, free, non-dual, infinite consciousness. This knowledge destroys all ignorance and bondage.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 37 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">37</span>
+        <p class="text-gray-200 flex-1">The impression "I am Brahman" thus created by constant practice destroys ignorance and the agitation caused by it, just as medicine or Rasayana destroys disease.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Repeated contemplation of "I am Brahman" (like medicine taken regularly) destroys ignorance and its effects (agitation etc.), leading to liberation.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 38 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">38</span>
+        <p class="text-gray-200 flex-1">Sitting in a solitary place, freeing the mind from desires and controlling the senses, meditate with unswerving attention on the Atman which is One without-a-second.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Practical instruction: In solitude, with controlled senses and mind, meditate single-pointedly on the non-dual Atman. This is the direct path to realization.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 39 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">39</span>
+        <p class="text-gray-200 flex-1">The wise one should intelligently merge the entire world-of-objects in the Atman alone and constantly think of the Self ever as contaminated by anything as the sky.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The seeker should see all objects as appearances in the Atman (like clouds in sky), and recognize the Self as ever-pure and unattached like space.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 40 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">40</span>
+        <p class="text-gray-200 flex-1">He who has realised the Supreme, discards all his identification with the objects of names and forms. (Thereafter) he dwells as an embodiment of the Infinite Consciousness and Bliss. He becomes the Self.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The realized being drops all identifications with names/forms, abiding as infinite Consciousness-Bliss. He lives as the Self, not as a limited individual.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 41 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">41</span>
+        <p class="text-gray-200 flex-1">There are no distinctions such as "Knower", the "Knowledge" and the "Object of Knowledge" in the Supreme Self. On account of Its being of the nature of endless Bliss, It does not admit of such distinctions within Itself. It alone shines by Itself.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> In the supreme state, all subject-object distinctions dissolve. The Self is non-dual Bliss, self-effulgent, beyond the triad of knower-knowing-known.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 42 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">42</span>
+        <p class="text-gray-200 flex-1">When this the lower and the higher aspects of the Self are well churned together, the fire of knowledge is born from it, which in its mighty conflagration shall burn down all the fuel of ignorance in us.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> By "churning" the teachings (lower/higher truths), the fire of knowledge arises, burning all ignorance. This metaphor suggests intense contemplation leads to realization.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 43 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">43</span>
+        <p class="text-gray-200 flex-1">The Lord of the early dawn (Aruna) himself has already looted away the thick darkness, when soon the sun rises. The Divine Consciousness of the Self rises when the right knowledge has already killed the darkness in the bosom.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Just as dawn (Aruna) dispels darkness before sunrise, right knowledge removes ignorance before the full dawn of Self-realization.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 44 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">44</span>
+        <p class="text-gray-200 flex-1">Atman is an ever-present Reality. Yet, because of ignorance it is not realised. On the destruction of ignorance Atman is realised. It is like the missing ornament of one's neck.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self is always present but unrealized due to ignorance. When ignorance is removed, it's realized to have been always there - like finding a necklace already around one's neck.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 45 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">45</span>
+        <p class="text-gray-200 flex-1">Brahman appears to be a'Jiva' because of ignorance, just as a post appears to be a ghost. The ego-centric-individuality is destroyed when the real nature of the'Jiva' is realised as the Self.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Due to ignorance, Brahman appears as limited jiva (like post as ghost). When the jiva's true nature as Brahman is realized, the false individuality dissolves.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 46 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">46</span>
+        <p class="text-gray-200 flex-1">The ignorance characterised by the notions'I' and'Mine' is destroyed by the knowledge produced by the realisation of the true nature of the Self, just as right information removes the wrong notion about the directions.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The "I/mine" notion (ignorance) is destroyed by Self-knowledge, just as correct directions remove confusion about location. Right knowledge displaces wrong notions.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 47 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">47</span>
+        <p class="text-gray-200 flex-1">The Yogi of perfect realisation and enlightenment sees through his "eye of wisdom" (Gyana Chakshush) the entire universe in his own Self and regards everything else as his own Self and nothing else.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The realized yogi sees the universe as the Self alone, through the eye of wisdom. All diversity is recognized as manifestations of the one Reality.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 48 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">48</span>
+        <p class="text-gray-200 flex-1">Nothing whatever exists other than the Atman: the tangible universe is verily Atman. As pots and jars are verily made of clay and cannot be said to be anything but clay, so too, to the enlightened soul and that is perceived is the Self.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> For the enlightened, everything is recognized as Atman alone - like all clay pots are essentially clay. Names/forms are superficial; the substance is one.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 49 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">49</span>
+        <p class="text-gray-200 flex-1">A liberated one, endowed with Self-knowledge, gives up the traits of his previously explained equipments (Upadhis) and because of his nature of Sat-chit-ananda, he verily becomes Brahman like (the worm that grows to be) a wasp.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The liberated being transcends all limiting adjuncts (upadhis) and abides as Sat-Chit-Ananda, just as a worm transforms into a wasp. His nature undergoes complete metamorphosis.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 50 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">50</span>
+        <p class="text-gray-200 flex-1">After crossing the ocean of delusion and killing the monsters of likes and dislikes, the Yogi who is united with peace dwells in the glory of his own realised Self - as an Atmaram.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Having crossed samsara (delusion) and conquered raga-dvesha (likes/dislikes), the yogi abides in the bliss of the Self (Atmaram - reveling in the Self).</p>
+      </div>
+    </div>
+    
+    <!-- Verse 51 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">51</span>
+        <p class="text-gray-200 flex-1">The self-abiding Jivan Mukta, relinquishing all his attachments to the illusory external happiness and satisfied with the bliss derived from the Atman, shines inwardly like a lamp placed inside a jar.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The liberated while living (jivanmukta), having renounced external pleasures and established in inner bliss, radiates peace within like a lamp inside a jar.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 52 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">52</span>
+        <p class="text-gray-200 flex-1">Though he lives in the conditionings (Upadhis), he, the contemplative one, remains ever unconcerned with anything or he may move about like the wind, perfectly unattached.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Though appearing to use body/mind (upadhis), the sage remains unattached - either still or moving freely like wind, untouched by circumstances.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 53 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">53</span>
+        <p class="text-gray-200 flex-1">On the destruction of the Upadhis, the contemplative one is totally absorbed in'Vishnu', the All-pervading Spirit, like water into water, space into space and light into light.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> When upadhis are transcended, the knower merges in Vishnu (all-pervading Consciousness) completely, like merging of similar elements.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 54 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">54</span>
+        <p class="text-gray-200 flex-1">Realise That to be Brahman, the attainment of which leaves nothing more to be attained, the blessedness of which leaves no other blessing to be desired and the knowledge of which leaves nothing more to be known.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman is that which, when attained, leaves no further desire for attainment, blessing or knowledge. It's the complete fulfillment of all seeking.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 55 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">55</span>
+        <p class="text-gray-200 flex-1">Realise that to be Brahman which, when seen, leaves nothing more to be seen, which having become one is not born again in this world and which, when knowing leaves nothing else to be known.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman realization ends all seeking - nothing remains to be seen/known, and one is freed from rebirth. It's the culmination of spiritual journey.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 56 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">56</span>
+        <p class="text-gray-200 flex-1">Realise that to be Brahman which is Existence-Knowledge-Bliss-Absolute, which is Non-dual, Infinite, Eternal and One and which fills all the quarters - above and below and all that exists between.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman is Sat-Chit-Ananda, non-dual, infinite, eternal, all-pervading. These positive descriptions complement earlier negations, pointing to the same Reality.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 57 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">57</span>
+        <p class="text-gray-200 flex-1">Realise that to be Brahman which is Non-dual, Indivisible, One and Blissful and which is indicated in Vedanta as the Immutable Substratum, realised after the negation of all tangible objects.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman is the non-dual, indivisible substratum realized through negating all objects (neti-neti). It's the blissful ground of all existence.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 58 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">58</span>
+        <p class="text-gray-200 flex-1">Deities like Brahma and others taste only a particle, of the unlimited Bliss of Brahman and enjoy in proportion their share of that particle.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Even great deities experience only a fraction of Brahman's infinite Bliss, according to their capacities. The liberated soul enjoys the fullness.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 59 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">59</span>
+        <p class="text-gray-200 flex-1">All objects are pervaded by Brahman. All actions are possible because of Brahman: therefore Brahman permeates everything as butter permeates milk.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman pervades all objects and enables all actions, just as butter permeates milk. It's the subtle essence in everything.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 60 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">60</span>
+        <p class="text-gray-200 flex-1">Realise that to be Brahman which is neither subtle nor gross: neither short nor long: without birth or change: without form, qualities, colour and name.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman transcends all pairs of opposites (subtle/gross etc.), all attributes, and all categories of thought. It's the unconditioned Reality.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 61 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">61</span>
+        <p class="text-gray-200 flex-1">That by the light of which the luminous, orbs like the Sun and the Moon are illuminated, but which is not illumined by their light, realise that to be Brahman.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman is that which illumines the sun and moon (source of all light) but isn't illumined by them. It's the self-luminous Consciousness behind all perception.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 62 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">62</span>
+        <p class="text-gray-200 flex-1">Pervading the entire universe outwardly and inwardly the Supreme Brahman shines of Itself like the fire that permeates a red-hot iron-ball and glows by itself.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman permeates everything inside/out, shining by its own light like fire in heated iron. It's not located anywhere but present everywhere.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 63 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">63</span>
+        <p class="text-gray-200 flex-1">Brahman is other than this, the universe. There exists nothing that is not Brahman. If any object other than Brahman appears to exist, it is unreal like the mirage.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Brahman is distinct from the universe (as reality from appearance), yet nothing exists apart from it. Any seeming separation is illusory like a mirage.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 64 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">64</span>
+        <p class="text-gray-200 flex-1">All that is perceived, or heard, is Brahman and nothing else. Attaining the knowledge of the Reality, one sees the Universe as the non-dual Brahman, Existence-Knowledge-Bliss-Absolute.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> For the realized, all perceptions are Brahman alone. The universe is seen as non-dual Sat-Chit-Ananda, without any separate existence.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 65 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">65</span>
+        <p class="text-gray-200 flex-1">Though Atman is Pure Consciousness and ever present everywhere, yet It is perceived by the eye-of-wisdom alone: but one whose vision is obscured by ignorance he does not see It; as the blind do not see the resplendent Sun.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> Though ever-present, the Atman is perceived only through wisdom (jnana). The ignorant, blinded by maya, fail to see it - like blind men missing the sun.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 66 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">66</span>
+        <p class="text-gray-200 flex-1">The'Jiva' free from impurities, being heated in the fire of knowledge kindled by hearing and so on, shines of itself like gold.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The jiva, purified by knowledge (through shravana-manana-nididhyasana), shines in its true nature like gold purified by fire, revealing its inherent luster.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 67 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">67</span>
+        <p class="text-gray-200 flex-1">The Atman, the Sun of Knowledge that rises in the sky of the heart, destroys the darkness of the ignorance, pervades and sustains all and shines and makes everything to shine.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The Self is like the inner sun - dispelling ignorance's darkness, sustaining all, and illuminating everything. It's the source of all light/understanding.</p>
+      </div>
+    </div>
+    
+    <!-- Verse 68 -->
+    <div class="verse-container" data-aos="fade-up">
+      <div class="flex items-start">
+        <span class="verse-number">68</span>
+        <p class="text-gray-200 flex-1">He who renouncing all activities, who is free of all the limitations of time, space and direction, worships his own Atman which is present everywhere, which is the destroyer of heat and cold, which is Bliss-Eternal and stainless, becomes All-knowing and All-pervading and attains thereafter Immortality.</p>
+      </div>
+      <div class="explanation mt-3">
+        <p class="text-gray-300"><strong>Explanation:</strong> The seeker who renounces all limited actions and worships the all-pervading Atman (his true Self) transcends all limitations, becoming omniscient and immortal - he realizes his true nature as Brahman.</p>
+      </div>
+    </div>
+    
+    <footer class="text-center text-sm text-gray-400 mt-16 pt-6 border-t border-gray-700" data-aos="fade-up">
+      <p class="mb-2"><i class="fas fa-book-open mr-2 text-amber-300"></i> Thus concludes Atma Bodha, the Knowledge of the Self.</p>
+      <p>Translated by Swami Chinmayananda, Published by Chinmaya Mission</p>
+    </footer>
+  </div>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  </script>
+</body>
+</html>
