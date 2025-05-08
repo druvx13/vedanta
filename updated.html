@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jivanmuktananda Lahari - The Waves of Eternal Bliss, a sacred text by Adi Shankaracharya">
+    <title>Jivanmuktananda Lahari - The Waves of Eternal Bliss</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Old+Standard+TT:wght@400;700&family=Cinzel:wght@400;700&family=Tiro+Devanagari+Sanskrit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a3226;
+            --secondary-color: #8b6b4a;
+            --bg-color: #f5f0e1;
+            --card-color: #fff9e6;
+            --border-color: #d4c9a8;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Old Standard TT', serif;
+            color: var(--primary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sanskrit {
+            font-family: 'Tiro Devanagari Sanskrit', serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        
+        .title-font {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+        
+        .vintage-card {
+            background-color: var(--card-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 0;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verse-number {
+            font-family: 'Old Standard TT', serif;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        
+        .divider {
+            border-top: 1px dashed var(--border-color);
+            margin: 1.25rem 0;
+            position: relative;
+        }
+        
+        .divider:after {
+            content: "❧";
+            position: absolute;
+            left: 50%;
+            top: -12px;
+            transform: translateX(-50%);
+            background: var(--card-color);
+            padding: 0 10px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            border-top: 2px solid var(--secondary-color);
+            background-color: rgba(255, 249, 230, 0.7);
+            font-size: 0.9rem;
+            padding: 1rem 0;
+        }
+        
+        .verse-item {
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .verse-item:hover {
+            background-color: #f8f4e5;
+            transform: translateX(5px);
+        }
+        
+        .verse-content {
+            flex-grow: 1;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .title-container {
+                padding: 0.75rem 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .title-font {
+                font-size: 1.75rem;
+                line-height: 1.2;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .verse-item {
+                flex-direction: column;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .verse-number {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1.1rem;
+            }
+            
+            .verse-content p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .sanskrit {
+                font-size: 1.4rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .vintage-card {
+                padding: 1rem;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+            }
+            
+            .vintage-card {
+                background: white;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .verse-item:hover {
+                background: transparent;
+                transform: none;
+            }
+            
+            .footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-6 max-w-5xl">
+        <!-- Compact header for mobile -->
+        <header class="text-center mb-6">
+            <div class="inline-block px-4 py-2 vintage-card title-container">
+                <h1 class="title-font text-3xl sm:text-4xl md:text-5xl mb-1">Jivanmuktananda Lahari</h1>
+                <p class="subtitle text-lg sm:text-xl"><em>The Waves of Eternal Bliss</em></p>
+            </div>
+            <div class="flex justify-center">
+                <div class="divider w-full md:w-3/4"></div>
+            </div>
+        </header>
+        
+        <!-- Main content -->
+        <main>
+            <div class="vintage-card">
+                <div class="text-center mb-6">
+                    <div class="mb-3">
+                        <i class="fas fa-om text-3xl" style="color: var(--secondary-color);"></i>
+                    </div>
+                    <p class="sanskrit mb-4" lang="sa">जीवन्मुक्तानन्द लहरी</p>
+                </div>
+                
+                <div id="verses-container">
+                    <!-- Verses 1-17 -->
+                    <div class="verse-item" data-verse="1">
+                        <div class="verse-number" aria-hidden="true">1</div>
+                        <div class="verse-content">
+                            <p>Beholding forms of youths and maidens, richly adorned,<br>
+                            With golden ornaments, like painted figures drawn;<br>
+                            Yet dwelling with them, as a witness pure, self-aware,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="2">
+                        <div class="verse-number" aria-hidden="true">2</div>
+                        <div class="verse-content">
+                            <p>In the forest, seeing trees bent low with fruit and leaves,<br>
+                            Shaded by dense foliage, echoing with birdsong sweet;<br>
+                            Reclining on earth, bathing in moonlight's gentle grace,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="3">
+                        <div class="verse-number" aria-hidden="true">3</div>
+                        <div class="verse-content">
+                            <p>Now in a palace, now on a mountain peak,<br>
+                            By riverbanks, or in the hermit's humble hut;<br>
+                            Residing amidst sages, serene and wise,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="4">
+                        <div class="verse-number" aria-hidden="true">4</div>
+                        <div class="verse-content">
+                            <p>Now playing with children, clapping hands in mirth,<br>
+                            Now delighting with young men and women decked in grace;<br>
+                            Now weeping with the aged, hearts burdened by care,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="5">
+                        <div class="verse-number" aria-hidden="true">5</div>
+                        <div class="verse-content">
+                            <p>Now with scholars, deeply versed in sacred lore,<br>
+                            Now with poets, skilled in rhetoric's refined art;<br>
+                            Now with logicians, debating truths profound,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="6">
+                        <div class="verse-number" aria-hidden="true">6</div>
+                        <div class="verse-content">
+                            <p>Now meditating, now offering worship pure—<br>
+                            With fragrant blooms, or spotless petals laid;<br>
+                            With heart uplifted, bowing in devotion true,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="7">
+                        <div class="verse-number" aria-hidden="true">7</div>
+                        <div class="verse-content">
+                            <p>Now chanting names of Shiva, Vishnu, or the Chief of Ganas,<br>
+                            Whose blessings manifest in forms divine;<br>
+                            With tears of joy, eyes brimming with love's delight,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="8">
+                        <div class="verse-number" aria-hidden="true">8</div>
+                        <div class="verse-content">
+                            <p>Now bathing in waters of the Ganga, or a well's cool stream,<br>
+                            In ponds or springs, hot or refreshingly chill;<br>
+                            With devotion pure, or with camphor's fragrant touch,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="9">
+                        <div class="verse-number" aria-hidden="true">9</div>
+                        <div class="verse-content">
+                            <p>Now acting through senses in the waking world,<br>
+                            Now in dreams, still engaged with worldly things;<br>
+                            Now tasting bliss in dreamless sleep profound,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="10">
+                        <div class="verse-number" aria-hidden="true">10</div>
+                        <div class="verse-content">
+                            <p>Now wearing hope's garb, or celestial robes,<br>
+                            Or bearing a deerskin girded at the waist;<br>
+                            Detached, a joy to hearts of noble souls,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="11">
+                        <div class="verse-number" aria-hidden="true">11</div>
+                        <div class="verse-content">
+                            <p>Now in sattva's calm, now rajas' restless stir,<br>
+                            Now tamas' shadow—yet beyond the triad's chain;<br>
+                            Now a householder, now a wanderer in sacred lore,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="12">
+                        <div class="verse-number" aria-hidden="true">12</div>
+                        <div class="verse-content">
+                            <p>Now silent, now engaged in speech divine,<br>
+                            Now laughing joyously, words forgotten, free;<br>
+                            Now observing the world's ways with tranquil gaze,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="13">
+                        <div class="verse-number" aria-hidden="true">13</div>
+                        <div class="verse-content">
+                            <p>Now casting lotuses into Shakti's blooming faces,<br>
+                            Now receiving them directly from his own form;<br>
+                            Revealing the non-dual essence, beyond "self" and "other,"<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="14">
+                        <div class="verse-number" aria-hidden="true">14</div>
+                        <div class="verse-content">
+                            <p>Now dwelling with Shaivas, now with Shakta devotees,<br>
+                            With Vaishnavas, Sauras, or Ganesha's followers;<br>
+                            Beyond all divisions, established in unity,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="15">
+                        <div class="verse-number" aria-hidden="true">15</div>
+                        <div class="verse-content">
+                            <p>Now beholding his own form as pure, formless, or manifold,<br>
+                            Endowed with diverse virtues, a wonder to behold;<br>
+                            Marveling, "What is this?" with joy unbounded,<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="16">
+                        <div class="verse-number" aria-hidden="true">16</div>
+                        <div class="verse-content">
+                            <p>Seeing all as truth non-dual, auspicious, divine,<br>
+                            Through steady practice of the great Upanishadic truths;<br>
+                            Beyond duality's illusion, chanting "Shiva, Shiva, Shiva,"<br>
+                            The sage, anointed by the guru's sacred rite, feels no delusion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse-item" data-verse="17">
+                        <div class="verse-number" aria-hidden="true">17</div>
+                        <div class="verse-content">
+                            <p>One who daily immerses in this liberating state,<br>
+                            The Supreme Shiva's abode, filled with grace and natural bliss—<br>
+                            Through guru's mercy, nectarine gaze diffused—<br>
+                            Is deemed a renunciate, yogi, sage, by seers thus.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Colophon -->
+                <div class="text-center mt-6">
+                    <p class="mb-0"><em>Thus concludes the <strong>Jivanmuktananda Lahari</strong>,<br>
+                    A work of the illustrious Bhagavat Sri Shankaracharya,<br>
+                    Disciple of the revered Sri Govinda Bhagavatpada,<br>
+                    An ascetic-scholar of the Paramahamsa order.</em></p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer mt-8">
+            <div class="container mx-auto px-4">
+                <p class="mb-0">© <span id="year"></span> Sacred Texts Archive • Designed with reverence</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Add smooth scroll behavior for better UX
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        } else {
+            window.onbeforeunload = function() {
+                window.scrollTo(0, 0);
+            }
+        }
+        
+        // Add touch feedback for mobile users
+        document.querySelectorAll('.verse-item').forEach(item => {
+            item.addEventListener('touchstart', function() {
+                this.classList.add('bg-gray-100');
+            });
+            
+            item.addEventListener('touchend', function() {
+                this.classList.remove('bg-gray-100');
+            });
+        });
+    </script>
+</body>
+</html>
